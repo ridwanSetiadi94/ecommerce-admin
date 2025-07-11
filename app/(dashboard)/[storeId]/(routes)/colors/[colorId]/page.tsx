@@ -4,7 +4,7 @@ import ColorForm from "./components/color-form";
 async function ColorPage({
   params,
 }: {
-  params: { colorId: string };
+  params: Promise<{ colorId: string }>;
 }): Promise<React.ReactElement> {
   const { colorId } = await params; // Await params to get the real value
   const color = await prismadb.color.findUnique({

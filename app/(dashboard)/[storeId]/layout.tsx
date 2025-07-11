@@ -8,7 +8,7 @@ export default async function DashboardLayout({
   params, // <- params is still a Promise-like object
 }: {
   children: React.ReactNode;
-  params: { storeId: string };
+  params: Promise<{ storeId: string }>;
 }) {
   // Await params and get the real values
   const { storeId } = await params; // <-- important!

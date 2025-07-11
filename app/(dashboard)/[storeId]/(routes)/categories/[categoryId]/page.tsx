@@ -4,7 +4,7 @@ import CategoryForm from "./components/category-form";
 async function CategoryPage({
   params,
 }: {
-  params: { categoryId: string; storeId: string };
+  params: Promise<{ categoryId: string; storeId: string }>;
 }): Promise<React.ReactElement> {
   const { categoryId, storeId } = await params; // Await params to get the real value
   const category = await prismadb.category.findUnique({

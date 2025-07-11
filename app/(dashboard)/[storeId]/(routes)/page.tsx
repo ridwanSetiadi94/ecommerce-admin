@@ -11,7 +11,7 @@ import { CreditCard, DollarSign, Package } from "lucide-react";
 import { JSX } from "react";
 
 interface DashboardPageProps {
-  params: { storeId: string };
+  params: Promise<{ storeId: string }>;
 }
 
 async function DashboardPage({

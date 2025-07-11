@@ -4,7 +4,7 @@ import SizeForm from "./components/size-form";
 async function SizePage({
   params,
 }: {
-  params: { sizeId: string };
+  params: Promise<{ sizeId: string }>;
 }): Promise<React.ReactElement> {
   const { sizeId } = await params; // Await params to get the real value
   const size = await prismadb.size.findUnique({

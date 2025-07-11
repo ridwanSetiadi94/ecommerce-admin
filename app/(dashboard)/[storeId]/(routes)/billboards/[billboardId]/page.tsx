@@ -4,7 +4,7 @@ import BillboardForm from "./components/billboard-form";
 async function BillboardPage({
   params,
 }: {
-  params: { billboardId: string };
+  params: Promise<{ billboardId: string }>;
 }): Promise<React.ReactElement> {
   const { billboardId } = await params; // Await params to get the real value
   const billboard = await prismadb.billboard.findUnique({

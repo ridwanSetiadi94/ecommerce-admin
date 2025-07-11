@@ -4,7 +4,7 @@ import ProductForm from "./components/product-form";
 async function ProductPage({
   params,
 }: {
-  params: { productId: string; storeId: string };
+  params: Promise<{ productId: string; storeId: string }>;
 }): Promise<React.ReactElement> {
   const { productId, storeId } = await params; // Await params to get the real value
   const product = await prismadb.product.findUnique({

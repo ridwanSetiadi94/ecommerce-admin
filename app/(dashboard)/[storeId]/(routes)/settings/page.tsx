@@ -4,9 +4,9 @@ import { redirect } from "next/navigation";
 import SettingsForm from "./components/settings-form";
 
 interface SettingsPageProps {
-  params: {
+  params: Promise<{
     storeId: string;
-  };
+  }>;
 }
 
 async function SettingsPage({
