@@ -22,7 +22,6 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import { useParams, useRouter } from "next/navigation";
 import { AlertModal } from "@/components/modals/alert-modal";
-import ImageUpload from "@/components/ui/image-upload";
 
 const formSchema = z.object({
   name: z.string().min(1, "Color Name is Required"),
@@ -73,7 +72,7 @@ function ColorForm({ initialData }: ColorFormProps): React.ReactElement {
       router.refresh();
       router.push(`/${params.storeId}/colors`);
       toast.success(toastMessage);
-    } catch (error) {
+    } catch {
       toast.error("Something Went Wrong");
     } finally {
       setLoading(false);
@@ -87,7 +86,7 @@ function ColorForm({ initialData }: ColorFormProps): React.ReactElement {
       router.refresh();
       router.push(`/${params.storeId}/colors`);
       toast.success("Color Deleted Successfully");
-    } catch (error) {
+    } catch {
       toast.error("Make sure you removed all products using this color first.");
     } finally {
       setLoading(false);

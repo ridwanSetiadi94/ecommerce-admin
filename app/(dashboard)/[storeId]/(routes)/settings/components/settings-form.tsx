@@ -54,7 +54,7 @@ function SettingsForm({ initialData }: SettingsFormProps): React.ReactElement {
       await axios.patch(`/api/stores/${params.storeId}`, data);
       router.refresh();
       toast.success("Store Updated Successfully");
-    } catch (error) {
+    } catch {
       toast.error("Something Went Wrong");
     } finally {
       setLoading(false);
@@ -68,7 +68,7 @@ function SettingsForm({ initialData }: SettingsFormProps): React.ReactElement {
       router.refresh();
       router.push("/");
       toast.success("Store Deleted Successfully");
-    } catch (error) {
+    } catch {
       toast.error("Make sure you removed all products and categories first.");
     } finally {
       setLoading(false);

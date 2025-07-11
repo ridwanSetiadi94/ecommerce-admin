@@ -70,7 +70,7 @@ function SizeForm({ initialData }: SizeFormProps): React.ReactElement {
       router.refresh();
       router.push(`/${params.storeId}/sizes`);
       toast.success(toastMessage);
-    } catch (error) {
+    } catch {
       toast.error("Something Went Wrong");
     } finally {
       setLoading(false);
@@ -84,7 +84,7 @@ function SizeForm({ initialData }: SizeFormProps): React.ReactElement {
       router.refresh();
       router.push(`/${params.storeId}/sizes`);
       toast.success("Size Deleted Successfully");
-    } catch (error) {
+    } catch {
       toast.error("Make sure you removed all products using this size first.");
     } finally {
       setLoading(false);

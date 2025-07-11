@@ -4,7 +4,7 @@ import * as z from "zod";
 import { Button } from "@/components/ui/button";
 import Heading from "@/components/ui/heading";
 import { Separator } from "@/components/ui/separator";
-import { Category, Color, Image, Product, Size } from "@/lib/generated/prisma";
+import { Category, Color, Size } from "@/lib/generated/prisma";
 import { Trash } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -121,7 +121,7 @@ function ProductForm({
       router.refresh();
       router.push(`/${params.storeId}/products`);
       toast.success(toastMessage);
-    } catch (error) {
+    } catch {
       toast.error("Something went wrong");
     } finally {
       setLoading(false);
@@ -135,7 +135,7 @@ function ProductForm({
       router.refresh();
       router.push(`/${params.storeId}/products`);
       toast.success("Product Deleted Successfully");
-    } catch (error) {
+    } catch {
       toast.error("Something went wrong");
     } finally {
       setLoading(false);

@@ -75,7 +75,7 @@ function BillboardForm({
       router.refresh();
       router.push(`/${params.storeId}/billboards`);
       toast.success(toastMessage);
-    } catch (error) {
+    } catch {
       toast.error("Something Went Wrong");
     } finally {
       setLoading(false);
@@ -91,7 +91,7 @@ function BillboardForm({
       router.refresh();
       router.push(`/${params.storeId}/billboards`);
       toast.success("Billboard Deleted Successfully");
-    } catch (error) {
+    } catch {
       toast.error(
         "Make sure you removed all categories using this billboard first."
       );
@@ -148,7 +148,7 @@ function BillboardForm({
                         field.onChange(urls[urls.length - 1]); // always pick latest
                       }
                     }}
-                    onRemove={(url: string) => field.onChange("")}
+                    onRemove={() => field.onChange("")}
                   />
                 </FormControl>
                 <FormMessage />

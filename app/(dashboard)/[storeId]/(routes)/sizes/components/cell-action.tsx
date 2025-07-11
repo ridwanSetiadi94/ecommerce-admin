@@ -38,7 +38,7 @@ function CellAction({ data }: CellActionProps): React.ReactElement {
       await axios.delete(`/api/${params.storeId}/sizes/${data.id}`);
       router.refresh();
       toast.success("Size Deleted Successfully");
-    } catch (error) {
+    } catch {
       toast.error("Make sure you removed all products using this size first.");
     } finally {
       setLoading(false);

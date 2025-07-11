@@ -38,7 +38,7 @@ function CellAction({ data }: CellActionProps): React.ReactElement {
       await axios.delete(`/api/${params.storeId}/products/${data.id}`);
       router.refresh();
       toast.success("Product Deleted Successfully");
-    } catch (error) {
+    } catch {
       toast.error("Something went wrong.");
     } finally {
       setLoading(false);

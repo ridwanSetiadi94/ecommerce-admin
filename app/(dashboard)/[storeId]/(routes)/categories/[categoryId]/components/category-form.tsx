@@ -83,7 +83,7 @@ function CategoryForm({
       router.refresh();
       router.push(`/${params.storeId}/categories`);
       toast.success(toastMessage);
-    } catch (error) {
+    } catch {
       toast.error("Something Went Wrong");
     } finally {
       setLoading(false);
@@ -99,7 +99,7 @@ function CategoryForm({
       router.refresh();
       router.push(`/${params.storeId}/categories`);
       toast.success("Category Deleted Successfully");
-    } catch (error) {
+    } catch {
       toast.error(
         "Make sure you removed all products using this category first."
       );

@@ -27,7 +27,7 @@ function ImageUpload({
 
   if (!isMounted) return null;
 
-  const handleUpload = (result: any) => {
+  const handleUpload = (result: { info?: { secure_url?: string } }) => {
     const url = result?.info?.secure_url;
     if (!url) return;
 
@@ -75,7 +75,7 @@ function ImageUpload({
           clientAllowedFormats: ["jpg", "jpeg", "png", "webp"],
         }}
       >
-        {({ open, cloudinary }) => {
+        {({ cloudinary }) => {
           function handleClick() {
             const widget = cloudinary?.createUploadWidget(
               {
@@ -83,7 +83,10 @@ function ImageUpload({
                 uploadPreset: process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET,
                 multiple: true,
               },
-              (error: any, result: any) => {
+              (
+                error: unknown,
+                result: { event?: string; info?: { secure_url?: string } }
+              ) => {
                 if (!error && result.event === "success") {
                   handleUpload(result);
                 }

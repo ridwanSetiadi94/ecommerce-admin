@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { useParams, usePathname } from "next/navigation";
 
-function MainNav({ className, ...props }: React.HTMLAttributes<HTMLElement>) {
+function MainNav({ className }: React.HTMLAttributes<HTMLElement>) {
   const pathname = usePathname();
   const params = useParams();
 

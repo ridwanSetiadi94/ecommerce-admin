@@ -38,7 +38,7 @@ function CellAction({ data }: CellActionProps): React.ReactElement {
       await axios.delete(`/api/${params.storeId}/billboards/${data.id}`);
       router.refresh();
       toast.success("Billboard Deleted Successfully");
-    } catch (error) {
+    } catch {
       toast.error(
         "Make sure you removed all categories using this billboard first."
       );

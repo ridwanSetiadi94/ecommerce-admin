@@ -42,7 +42,7 @@ export function StoreModal() {
 
       const response = await axios.post("/api/stores", values);
       window.location.assign(`/${response.data.id}`); // Redirect to the new store's dashboard
-    } catch (error) {
+    } catch {
       toast.error("Something went wrong.");
     } finally {
       setLoading(false);

@@ -3,7 +3,7 @@
 import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
 
 interface OverviewProps {
-  data: any[];
+  data: { name: string; total: number }[];
 }
 
 function Overview({ data }: OverviewProps): React.ReactElement {
